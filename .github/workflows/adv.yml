@@ -26,5 +26,5 @@ jobs:
       with:
         name: cp-and-mv-files
         path: |
-          ../advcp
-          ../advmv
+          advcp
+          advmv
