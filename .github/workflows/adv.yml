@@ -8,7 +8,7 @@ on:
 
 jobs:
   install:
-    runs-on: ubuntu-latest  # Use an Ubuntu runner for the job
+    runs-on: ubuntu-22.04  # Use an Ubuntu runner for the job
     
     steps:
     - name: Checkout repository
@@ -21,7 +21,7 @@ jobs:
         bash install.sh
         
         
-    - name: Upload cp and mv as single artifact
+    - name: Upload cp and mv as  artifact
       uses: actions/upload-artifact@v4
       with:
         name: cp-and-mv-files
