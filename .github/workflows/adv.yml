@@ -1,0 +1,29 @@
+name: Install coreutils-dev
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on push to the 'main' branch
+
+jobs:
+  install:
+    runs-on: ubuntu-latest  # Use an Ubuntu runner for the job
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Checkout the code
+
+    - name: Update package list and install coreutils-dev
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y coreutils-dev
+        bash install.sh
+        
+        
+    - name: Upload cp and mv as single artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: cp-and-mv-files
+        path: |
+          ../advcp
+          ../advmv
