@@ -4,7 +4,7 @@ name: Install coreutils-dev
 on:
   push:
     branches:
-      - main  # Trigger the workflow on push to the 'main' branch
+      - master  # Trigger the workflow on push to the 'main' branch
 
 jobs:
   install:
